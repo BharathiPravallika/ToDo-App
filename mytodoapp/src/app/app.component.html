@@ -1,0 +1,26 @@
+<div style="display: flex; justify-content: center;">
+  <div class="outer-container">
+    <div class="input-add">
+      <input #addtask type="text" placeholder="Add Your Task">
+      <button (click)="newtask(addtask.value)" id="newtaskbtn">+</button>
+    </div>
+    <div class="removeallcont" *ngIf="tasks.length >= 1">
+      <button (click)="removealltasks()">Remove all</button>
+    </div>
+    <div class="allnotes">
+      <div class="notes-card" *ngFor="let item of tasks">
+        <p>{{item.title}}</p>
+        <button (click)="removetask(item.id)">X</button>
+      </div>
+      <!-- <div class="notes-card">
+        <p>Hello World</p>
+        <button>X</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<router-outlet></router-outlet>
